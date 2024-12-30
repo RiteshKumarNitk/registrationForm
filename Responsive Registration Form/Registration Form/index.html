@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration Form in HTML CSS</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        position: relative;
+        padding: 20px;
+      }
+      .header-image {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        max-width: 100px;
+      }
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+      }
+      .footer .sign {
+        text-align: right;
+      }
+      .table-container {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table th,
+      table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      table th {
+        background-color: #f4f4f4;
+      }
+      .print-button {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+      }
+      .print-button:hover {
+        background-color: #45a049;
+      }
+      .remarks {
+        padding: 20px;
+      }
+      
+      .remarkheaderText{
+        font-size: 20px;
+        font-weight: 600;
+      }
+      
+      table {
+        color: #666;
+        background: #eaebec;
+        border: #ccc 1px solid;
+        margin: 2rem 0;
+      }
+
+      table th {
+        position: sticky;
+        top:0;
+        padding: 15px 35px;
+        border-left:1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;
+        background: #ededed;
+      }
+
+      table tr {
+        text-align: center;
+        padding-left: 20px;
+      }
+
+      table td:first-child {
+        text-align: left;
+        padding-left: 20px;
+        border-left: 0;
+      }
+
+      table td {
+        padding: 15px 35px;
+        background: #fafafa;
+      }
+
+      table tr:hover td {
+        background: #f2f2f2;
+      }
+      .contentCenter{
+       text-align: center; 
+      }
+      .heading-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .heading-wrapper h2 {
+        margin-right: 20px;
+      }
+
+      .heading-wrapper img {
+        max-width: 100px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .headertop{
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  </head>
+  <body>
+    <section class="container">
+      <div class="contentCenter">
+        <h2>पुर्नवैध लीजडीड / फ्री-होल्ड लीजडीड हेतु आवेदन पत्र</h2>
+
+      </div>
+      <form id="applicationForm" class="form">
+        <!-- First Container -->
+        <div class="input-box container">
+          <label>जन-आधार नम्बर</label>
+          <input type="number" name="aadhaarNumber" placeholder="जन-आधार नम्बर"  />
+        </div>
+        <div class="input-box container">
+          <label>प्रार्थी का नाम</label>
+          <input type="text" name="applicantName" placeholder="प्रार्थी का नाम"  />
+        </div>
+        <div class="input-box container">
+          <label>पिता/पति का नाम</label>
+          <input type="text" name="fatherHusbandName" placeholder="पिता/पति का नाम"  />
+        </div>
+        <div class="input-box container">
+          <label>वर्तमान स्थायी पता</label>
+          <input type="text" name="currentAddress" placeholder="वर्तमान स्थायी पता"  />
+        </div>
+        <div class="input-box container">
+          <label>पत्राचार का पता</label>
+          <input type="text" name="communicationAddress" placeholder="पत्राचार का पता"  />
+        </div>
+        <div class="input-box container">
+          <label>मोबाईल नम्बर</label>
+          <input type="number" name="Mobile Number" placeholder="मोबाईल नम्बर"  />
+        </div>
+        <div class="input-box container">
+          <label>ईमेल आई.डी.
+          </label>
+          <input type="email" name="email" placeholder="ईमेल आई.डी.
+          "  />
+        </div>
+        <div class="input-box container">
+          <label>संबंधित जोन कार्यालय</label>
+          <input type="text" name="zoneOffice" placeholder="संबंधित जोन कार्यालय"  />
+        </div>
+
+        <!-- Second Container -->
+        <div class="input-box container">
+          <h3>जविप्रा द्वारा जारी पट्टे में अंकित विवरण</h3>
+          <div class="input-box">
+            <label>भू-स्वामी / पट्टाधारक का नाम:</label>
+            <input type="text" name="landOwnerName" placeholder="भू-स्वामी / पट्टाधारक का नाम"  />
+          </div>
+          <div class="column">
+            <div class="input-box">
+              <label>पट्टा जारी क्रमांक व दिनांक:</label>
+              <input type="date" name="leaseDetails" placeholder="पट्टा जारी क्रमांक व दिनांक"  />
+            </div>
+          </div>
+        </div>
+
+        <!-- Third Container -->
+        <div class="input-box container">
+          <h3>भूखण्ड का विवरण जिसके लिए आवेदन किया गया है:</h3>
+          <div class="gender-box">
+            <h3>विकासकर्ता का प्रकार (जविप्रा / निजी खातेदारी / सोसाइटी)</h3>
+            <div class="select-box">
+              <select name="developerType">
+                <option hidden>Select</option>
+                <option>जविप्रा</option>
+                <option>निजी खातेदारी</option>
+                <option>सोसाइटी</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="gender-box">
+            <h3>योजना का नामः</h3>
+            <div class="select-box">
+              <select name="developerType">
+                <option hidden>Select</option>
+                <option>जविप्रा</option>
+                <option>निजी खातेदारी</option>
+                <option>सोसाइटी</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="gender-box">
+            <h3>भूखण्ड संख्याः</h3>
+            <div class="select-box">
+              <select name="developerType">
+                <option hidden>Select</option>
+                <option>जविप्रा</option>
+                <option>निजी खातेदारी</option>
+                <option>सोसाइटी</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-box">
+            <label>भूखण्ड का क्षेत्रफल (वर्ग गज/वर्ग मीटर):-</label>
+            <input type="number" name="plotArea" placeholder="भूखण्ड का क्षेत्रफल"  />
+          </div>
+          <div class="input-box">
+            <label>भूखण्ड का प्रकार (आवासीय / वाणिज्य / मिश्रित / अन्य):-
+            </label>
+            <div class="select-box">
+              <select name="plotType">
+                <option hidden>Select</option>
+                <option>आवासीय</option>
+                <option>वाणिज्य</option>
+                <option>मिश्रित</option>
+                <option>अन्य</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- File Upload -->
+        <div class="input-box container">
+          <label>Upload Picture:</label>
+          <input type="file" name="uploadPicture" accept="image/*" />
+        </div>
+        <div class="input-box container">
+          <label>Upload Signature:</label>
+          <input type="file" name="uploadSignature" accept="image/*" />
+        </div>
+
+        <!-- Final Container -->
+        <div class="input-box container">
+          <label>दिनांक:</label>
+          <input type="date" name="date"  />
+          <label>स्थान:</label>
+          <input type="text" name="location" placeholder="स्थान"  />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+
+      <div id="outputContainer" class="table-container" style="display: none;">
+        <div class="heading-wrapper">
+          <h2 class="contentCenter">पुर्नवैध लीजडीड / फ्री-होल्ड लीजडीड हेतु आवेदन पत्र</h2>
+        </div>
+        <div id="tablecontainer">
+          <table>
+            <thead>
+              <tr style="width:100%">
+                <th style="width:10%">Sr. No.</th>
+                <th style="width:30%">Field</th>
+                <th style="width:60%">Value</th>
+              </tr>
+            </thead>
+            <tbody id="formDetailsTable"></tbody>
+          </table>
+        </div>
+        <div class="remarksheader">
+          <label class="remarkheaderText">आवेदन पत्र के साथ निम्न दस्तावेज भी संलग्न/अपलोड़ करें-</label>
+          <ol class="remarks">
+            <li>आवेदन पत्र में एक फोटो
+            </li>
+            <li>पहचान पत्र (जन-आधार कार्ड/आधार कार्ड / मतदान पत्र/पासपोर्ट / ड्राइविंग लाईसेन्स)
+            </li>
+            <li>पूर्व में जविप्रा द्वारा जारी लीजडीड एवं साईट प्लान</li>
+          </ol>
+        </div>
+        <button class="print-button" id="printButton">Print</button>
+      </div>
+    </section>
+
+    <script>
+      const form = document.getElementById("applicationForm");
+      const outputContainer = document.getElementById("outputContainer");
+      const formDetailsTable = document.getElementById("formDetailsTable");
+      const printButton = document.getElementById("printButton");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent page refresh
+        const formData = new FormData(form);
+
+        // Clear previous table rows
+        formDetailsTable.innerHTML = "";
+
+        let serialNumber = 1; // Serial number counter
+        let dateValue = "";
+        let locationValue = "";
+        let pictureUrl = ""; // To hold the uploaded picture URL
+        let signatureUrl = ""; // To hold the uploaded signature URL
+
+        // Populate table with form data
+        formData.forEach((value, key) => {
+          if (key === 'date') {
+            dateValue = value;
+          } else if (key === 'location') {
+            locationValue = value;
+          } else if (key === 'uploadPicture') {
+            if (value.size > 0) {
+              pictureUrl = URL.createObjectURL(value); // Generate a temporary URL for the uploaded picture
+            }
+          } else if (key === 'uploadSignature') {
+            if (value.size > 0) {
+              signatureUrl = URL.createObjectURL(value); // Generate a temporary URL for the uploaded signature
+            }
+          } else {
+            const row = document.createElement("tr");
+            const serialCell = document.createElement("td");
+            const fieldCell = document.createElement("td");
+            const valueCell = document.createElement("td");
+
+            serialCell.textContent = serialNumber++;
+            fieldCell.textContent = key;
+            valueCell.textContent = value;
+
+            row.appendChild(serialCell);
+            row.appendChild(fieldCell);
+            row.appendChild(valueCell);
+            formDetailsTable.appendChild(row);
+          }
+        });
+
+        // Add date and location to the output below the table
+        const dateLocationContainer = document.createElement("div");
+        dateLocationContainer.style.display = "flex";
+        dateLocationContainer.style.alignItems = "center";
+        dateLocationContainer.style.justifyContent = "space-between";
+
+        const dateLocationElement = document.createElement("p");
+        dateLocationElement.textContent = `दिनांक: ${dateValue} | स्थान: ${locationValue}`;
+        dateLocationElement.style.fontWeight = "bold";
+
+        const signatureContainer = document.createElement("div");
+        if (signatureUrl) {
+          const signatureElement = document.createElement("img");
+          signatureElement.src = signatureUrl;
+          signatureElement.alt = "Uploaded Signature";
+          signatureElement.style.maxWidth = "100px";
+          signatureElement.style.border = "1px solid #ccc";
+          signatureElement.style.borderRadius = "5px";
+          signatureContainer.appendChild(signatureElement);
+        } else {
+          signatureContainer.textContent = "No signature uploaded.";
+          signatureContainer.style.color = "#888";
+        }
+
+        dateLocationContainer.appendChild(dateLocationElement);
+        dateLocationContainer.appendChild(signatureContainer);
+
+        const tableContainer = document.getElementById("tablecontainer");
+        tableContainer.append(dateLocationContainer);
+
+        // Show the uploaded picture next to the heading
+        const heading = document.querySelector("h2.contentCenter");
+        const imageContainer = document.createElement("div");
+        imageContainer.style.display = "inline-block";
+        imageContainer.style.marginLeft = "20px";
+        // Find the wrapper instead of the heading
+          const headingWrapper = document.querySelector(".heading-wrapper");
+
+          // Clear any previous uploaded picture in the wrapper
+          const existingImage = headingWrapper.querySelector("img");
+        if (existingImage) {
+              existingImage.remove();
+            }
+        if (pictureUrl) {
+          const imageElement = document.createElement("img");
+          imageElement.src = pictureUrl;
+          imageElement.alt = "Uploaded Picture";
+          headingWrapper.appendChild(imageElement);
+
+          imageElement.style.maxWidth = "100px";
+          imageElement.style.border = "1px solid #ccc";
+          imageElement.style.borderRadius = "5px";
+          imageContainer.appendChild(imageElement);
+        } else {
+          imageContainer.textContent = "No picture uploaded.";
+          imageContainer.style.color = "#888";
+        }
+
+        // Append the image container next to the heading
+        heading.parentNode.insertBefore(imageContainer, heading.nextSibling);
+
+        // Show the output container
+        outputContainer.style.display = "block";
+      });
+
+      // Print functionality
+      printButton.addEventListener("click", function () {
+        window.print(); // Trigger the browser's print dialog
+      });
+    </script>
+  </body>
+</html>

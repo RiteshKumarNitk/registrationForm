@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Output</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+    .content {
+      max-width: 800px;
+      margin: auto;
+    }
+    img {
+      max-height: 100px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .heading {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h2 class="contentCenter">Form Details</h2>
+    <table id="formDetailsTable" border="1" cellspacing="0" cellpadding="5"></table>
+    <div id="dateLocationContainer" class="flex-container"></div>
+  </div>
+  <script>
+    // Retrieve form data from sessionStorage
+    const data = JSON.parse(sessionStorage.getItem("formData"));
+
+    if (data) {
+      const table = document.getElementById("formDetailsTable");
+      let serialNumber = 1;
+
+      // Populate the table with form data
+      for (const [key, value] of Object.entries(data)) {
+        if (key !== "pictureUrl" && key !== "signatureUrl") {
+          const row = document.createElement("tr");
+          const serialCell = document.createElement("td");
+          const fieldCell = document.createElement("td");
+          const valueCell = document.createElement("td");
+
+          serialCell.textContent = serialNumber++;
+          fieldCell.textContent = key;
+          valueCell.textContent = value;
+
+          row.appendChild(serialCell);
+          row.appendChild(fieldCell);
+          row.appendChild(valueCell);
+          table.appendChild(row);
+        }
+      }
+
+      // Display date, location, and signature
+      const dateLocationContainer = document.getElementById("dateLocationContainer");
+
+      const dateLocationElement = document.createElement("p");
+      dateLocationElement.className = "heading";
+      dateLocationElement.textContent = `दिनांक: ${data.date || ""} | स्थान: ${data.location || ""}`;
+
+      const signatureContainer = document.createElement("div");
+      if (data.signatureUrl) {
+        const signatureElement = document.createElement("img");
+        signatureElement.src = data.signatureUrl;
+        signatureElement.alt = "Uploaded Signature";
+        signatureContainer.appendChild(signatureElement);
+      } else {
+        signatureContainer.textContent = "No signature uploaded.";
+        signatureContainer.style.color = "#888";
+      }
+
+      dateLocationContainer.appendChild(dateLocationElement);
+      dateLocationContainer.appendChild(signatureContainer);
+
+      // Display uploaded picture next to the heading
+      if (data.pictureUrl) {
+        const heading = document.querySelector(".contentCenter");
+        const imageContainer = document.createElement("div");
+        imageContainer.style.display = "inline-block";
+        imageContainer.style.marginLeft = "20px";
+
+        const imageElement = document.createElement("img");
+        imageElement.src = data.pictureUrl;
+        imageElement.alt = "Uploaded Picture";
+        imageContainer.appendChild(imageElement);
+
+        heading.parentNode.insertBefore(imageContainer, heading.nextSibling);
+      }
+    } else {
+      document.body.innerHTML = "<p>No form data found.</p>";
+    }
+  </script>
+</body>
+</html>
